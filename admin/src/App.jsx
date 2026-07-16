@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 
-  const url = "https://quickbite-admin-o3dj.onrender.com";
+  const url = "https://quickbite-backened.onrender.com";
   return (
     <div>
       <ToastContainer/>

@@ -379,4 +379,4 @@ export const food_list = [
         category: "Chinese"
     }]
 
-export const url = 'http://localhost:4000'
+export const url = 'https://quickbite-backened.onrender.com'

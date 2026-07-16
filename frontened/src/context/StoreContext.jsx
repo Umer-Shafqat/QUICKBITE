@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
 const [cartitems, setCartitems] = useState({});
 const [searchText, setSearchText] = useState("");
 
-const url = "http://localhost:4000";
+const url = "https://quickbite-backened.onrender.com";
 
 const [token,setToken] = useState("");
 const [food_list,setFoodList] = useState([]); 

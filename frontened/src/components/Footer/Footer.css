@@ -1,0 +1,176 @@
+.footer{
+    color:darkred;
+    background-color:#A79885;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    padding : 20px 8vw;
+    padding-top:80px ;
+    margin-top: 100px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    width:100%;
+    gap: 80px;
+}
+
+.footer-content-left , .footer-content-center, .footer-content-right{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-content-left li, .footer-content-center li, .footer-content-right li{
+   list-style: none;
+   margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer-content-left .logo{
+  width: 150px;
+}
+
+.footer-content-center h2, .footer-content-right h2{
+  color:darkred;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Icon wrapper */
+.footer-social-icons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+/* Circle background (bigger size) */
+.footer-social-icons .icon span {
+  height: 80px;   /* Bigger circle */
+  width: 80px;
+  background: #A79885;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+  box-shadow: 0 4px 10px khaki;
+}
+
+/* Icon image (bigger inside) */
+.footer-social-icons .icon img {
+  height: 38px;   /* Bigger icon */
+  width: 38px;
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+/* Tooltip */
+.footer-social-icons .tooltip {
+  position: absolute;
+  top: -40px;
+  background: #A79885;
+  color: darkred;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.footer-social-icons .icon:hover .tooltip {
+  top: -35px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Facebook */
+.footer-social-icons .facebook span {
+  border: 2px solid darkred;
+}
+.footer-social-icons .facebook:hover span {
+  background: #A79885;
+}
+.footer-social-icons .facebook:hover img {
+  filter: brightness(0) invert(1); /* makes white logo */
+}
+.footer-social-icons .facebook .tooltip {
+  background: #A79885;
+}
+
+/* LinkedIn */
+.footer-social-icons .linkedin span {
+  border: 2px solid darkred;
+}
+.footer-social-icons .linkedin:hover span {
+  background: #A79885;
+}
+.footer-social-icons .linkedin:hover img {
+  filter: brightness(0) invert(1); /* white logo */
+}
+.footer-social-icons .linkedin .tooltip {
+  background: #A79885;
+}
+
+/* Twitter */
+.footer-social-icons .twitter span {
+  border: 2px solid darkred;
+}
+.footer-social-icons .twitter:hover span {
+  background: #A79885;
+}
+.footer-social-icons .twitter:hover img {
+  filter: brightness(0) invert(1); /* white logo */
+}
+.footer-social-icons .twitter .tooltip {
+  background: #A79885;
+}
+
+/* Instagram */
+.footer-social-icons .instagram span {
+  border: 2px solid darkred;
+}
+.footer-social-icons .instagram:hover span {
+  background: #A79885;
+}
+.footer-social-icons .instagram:hover img {
+  filter: brightness(0) invert(1); /* white logo */
+}
+.footer-social-icons .instagram .tooltip {
+  background: #A79885;
+}
+
+.footer hr{
+    width:100%;
+    height: 2px;
+    margin: 20px 0;
+    background-color: darkred;
+    border: none;
+}
+
+@media (max-width: 750px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+}

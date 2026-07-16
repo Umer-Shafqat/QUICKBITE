@@ -1,0 +1,109 @@
+.list {
+    width: 100%;
+}
+
+.list p {
+    margin-bottom: 10px;
+}
+
+.list-table {
+    width: 100%;
+    border: 1px solid #cacaca;
+}
+
+.list-table-format {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 1.5fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #cacaca;
+    font-size: 14px;
+}
+
+.list-table-format.title {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+.list-table-format img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cursor {
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cursor:hover {
+    color: red;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+
+    .list-table-format {
+        grid-template-columns: 0.8fr 2fr 1fr 0.8fr 0.4fr;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .list-table-format img {
+        width: 80px;
+        height: 60px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+
+    .list-table-format.title {
+        display: none;
+    }
+
+    .list-table-format {
+        grid-template-columns: 80px 1fr;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+
+    .list-table-format img {
+        width: 80px;
+        height: 80px;
+        grid-row: span 4;
+    }
+
+    .list-table-format p:nth-child(2)::before {
+        content: "Name: ";
+        font-weight: bold;
+    }
+
+    .list-table-format p:nth-child(3)::before {
+        content: "Category: ";
+        font-weight: bold;
+    }
+
+    .list-table-format p:nth-child(4)::before {
+        content: "Price: ";
+        font-weight: bold;
+    }
+
+    .cursor {
+        text-align: left;
+        color: red;
+    }
+
+    .cursor::before {
+        content: "Delete: ";
+        color: black;
+        font-weight: bold;
+    }
+}

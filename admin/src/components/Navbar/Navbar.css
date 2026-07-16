@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4%;
+    border-bottom: 2px solid #e5e5e5;
+    background: #fff;
+}
+
+.navbar-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar .logo {
+    width: max(100px, 8%);     /* Adjust if needed */
+    height: auto;
+}
+
+.navbar-left p {
+    margin: 0;
+    margin-top: -5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+.navbar .profile_image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+}

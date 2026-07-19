@@ -1,176 +1,368 @@
-.footer{
-    color:darkred;
-    background-color:#A79885;
-    display:flex;
+.footer {
+    width: 100%;
+    color: darkred;
+    background-color: #A79885;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap:20px;
-    padding : 20px 8vw;
-    padding-top:80px ;
+    gap: 20px;
+
+    padding: 80px clamp(20px, 8vw, 120px) 25px;
     margin-top: 100px;
+
+    box-sizing: border-box;
 }
 
-.footer-content{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    width:100%;
-    gap: 80px;
+
+/* =========================
+   FOOTER CONTENT
+========================= */
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    width: 100%;
+    max-width: 1400px;
+    gap: clamp(30px, 6vw, 80px);
 }
 
-.footer-content-left , .footer-content-center, .footer-content-right{
-    display:flex;
+
+/* Footer Columns */
+
+.footer-content-left,
+.footer-content-center,
+.footer-content-right {
+    display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 20px;
 }
 
-.footer-content-left li, .footer-content-center li, .footer-content-right li{
-   list-style: none;
-   margin-bottom: 10px;
+
+/* Logo */
+
+.footer-content-left .logo {
+    width: clamp(120px, 12vw, 150px);
+    height: auto;
+}
+
+
+/* Footer Headings */
+
+.footer-content-center h2,
+.footer-content-right h2 {
+    color: darkred;
+    font-size: clamp(18px, 2vw, 24px);
+    margin: 0;
+}
+
+
+/* Footer Lists */
+
+.footer-content-left ul,
+.footer-content-center ul,
+.footer-content-right ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-content-left li,
+.footer-content-center li,
+.footer-content-right li {
+    list-style: none;
+    margin-bottom: 10px;
     cursor: pointer;
+    font-size: clamp(14px, 1.2vw, 16px);
 }
 
-.footer-content-left .logo{
-  width: 150px;
-}
 
-.footer-content-center h2, .footer-content-right h2{
-  color:darkred;
-}
+/* =========================
+   SOCIAL ICONS
+========================= */
 
 .footer-social-icons {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(15px, 2.5vw, 25px);
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
 
-/* Icon wrapper */
+
+/* Icon Wrapper */
+
 .footer-social-icons .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    transition:
+        transform 0.4s cubic-bezier(
+            0.68,
+            -0.55,
+            0.265,
+            1.55
+        );
 }
 
-/* Circle background (bigger size) */
+
+/* Hover Animation */
+
+.footer-social-icons .icon:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Circle */
+
 .footer-social-icons .icon span {
-  height: 80px;   /* Bigger circle */
-  width: 80px;
-  background: #A79885;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.4s ease;
-  box-shadow: 0 4px 10px khaki;
+    width: clamp(55px, 6vw, 80px);
+    height: clamp(55px, 6vw, 80px);
+
+    background: #A79885;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.4s ease;
+
+    box-shadow: 0 4px 10px khaki;
 }
 
-/* Icon image (bigger inside) */
+
+/* Icon Image */
+
 .footer-social-icons .icon img {
-  height: 38px;   /* Bigger icon */
-  width: 38px;
-  object-fit: contain;
-  transition: 0.4s ease;
+    width: clamp(28px, 3vw, 38px);
+    height: clamp(28px, 3vw, 38px);
+
+    object-fit: contain;
+    transition: 0.4s ease;
 }
 
-/* Tooltip */
+
+/* =========================
+   TOOLTIP
+========================= */
+
 .footer-social-icons .tooltip {
-  position: absolute;
-  top: -40px;
-  background: #A79885;
-  color: darkred;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+    position: absolute;
+    top: -40px;
+
+    background: #A79885;
+    color: darkred;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+
+    transition:
+        opacity 0.3s ease,
+        top 0.3s ease;
 }
+
 
 .footer-social-icons .icon:hover .tooltip {
-  top: -35px;
-  opacity: 1;
-  pointer-events: auto;
+    top: -35px;
+    opacity: 1;
 }
 
-/* Facebook */
-.footer-social-icons .facebook span {
-  border: 2px solid darkred;
-}
-.footer-social-icons .facebook:hover span {
-  background: #A79885;
-}
-.footer-social-icons .facebook:hover img {
-  filter: brightness(0) invert(1); /* makes white logo */
-}
-.footer-social-icons .facebook .tooltip {
-  background: #A79885;
-}
 
-/* LinkedIn */
-.footer-social-icons .linkedin span {
-  border: 2px solid darkred;
-}
-.footer-social-icons .linkedin:hover span {
-  background: #A79885;
-}
-.footer-social-icons .linkedin:hover img {
-  filter: brightness(0) invert(1); /* white logo */
-}
-.footer-social-icons .linkedin .tooltip {
-  background: #A79885;
-}
+/* =========================
+   SOCIAL ICON BORDERS
+========================= */
 
-/* Twitter */
-.footer-social-icons .twitter span {
-  border: 2px solid darkred;
-}
-.footer-social-icons .twitter:hover span {
-  background: #A79885;
-}
-.footer-social-icons .twitter:hover img {
-  filter: brightness(0) invert(1); /* white logo */
-}
-.footer-social-icons .twitter .tooltip {
-  background: #A79885;
-}
-
-/* Instagram */
+.footer-social-icons .facebook span,
+.footer-social-icons .linkedin span,
+.footer-social-icons .twitter span,
 .footer-social-icons .instagram span {
-  border: 2px solid darkred;
-}
-.footer-social-icons .instagram:hover span {
-  background: #A79885;
-}
-.footer-social-icons .instagram:hover img {
-  filter: brightness(0) invert(1); /* white logo */
-}
-.footer-social-icons .instagram .tooltip {
-  background: #A79885;
+    border: 2px solid darkred;
 }
 
-.footer hr{
-    width:100%;
+
+/* Hover Effect */
+
+.footer-social-icons .facebook:hover span,
+.footer-social-icons .linkedin:hover span,
+.footer-social-icons .twitter:hover span,
+.footer-social-icons .instagram:hover span {
+    background: darkred;
+}
+
+
+.footer-social-icons .facebook:hover img,
+.footer-social-icons .linkedin:hover img,
+.footer-social-icons .twitter:hover img,
+.footer-social-icons .instagram:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+
+.footer hr {
+    width: 100%;
+    max-width: 1400px;
+
     height: 2px;
     margin: 20px 0;
+
     background-color: darkred;
     border: none;
 }
 
-@media (max-width: 750px) {
-    .footer-content{
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.footer-copyright {
+    font-size: clamp(12px, 1.2vw, 15px);
+    text-align: center;
+    margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .footer {
+        padding-top: 60px;
+        margin-top: 70px;
     }
-    .footer-copyright{
-        text-align: center;
+
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 30px;
     }
 }
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .footer {
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+        gap: 15px;
+    }
+
+
+    /* Stack footer columns */
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+
+    /* Center all content */
+
+    .footer-content-left,
+    .footer-content-center,
+    .footer-content-right {
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+
+    /* Logo */
+
+    .footer-content-left .logo {
+        width: 130px;
+    }
+
+
+    /* Social icons */
+
+    .footer-social-icons {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+
+    /* Social circles */
+
+    .footer-social-icons .icon span {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    /* Social images */
+
+    .footer-social-icons .icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* Copyright */
+
+    .footer-copyright {
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .footer {
+        padding: 40px 15px 20px;
+    }
+
+
+    .footer-social-icons {
+        gap: 10px;
+    }
+
+
+    .footer-social-icons .icon span {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .footer-social-icons .icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    /* Hide tooltip on very small screens */
+
+    .footer-social-icons .tooltip {
+        display: none;
+    }
+}
+

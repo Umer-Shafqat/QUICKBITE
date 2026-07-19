@@ -1,60 +1,211 @@
-.header{
-    height: 34vw;
+.header {
+    width: 100%;
+    height: clamp(350px, 34vw, 600px);
+
     margin: 30px auto;
-    background: url('../../assets/header1_img.png') no-repeat;
-    background-size: 85vw;
+
+    background-image: url('../../assets/header1_img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     position: relative;
+    overflow: hidden;
+
+    border-radius: 10px;
 }
 
-.header-contents{
+
+/* =========================
+   HEADER CONTENT
+========================= */
+
+.header-contents {
     position: absolute;
+
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap:1.5vw ;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadein 3s ;
+    align-items: flex-start;
+
+    gap: clamp(12px, 1.5vw, 25px);
+
+    width: 100%;
+    max-width: 600px;
+
+    left: clamp(25px, 6vw, 100px);
+    bottom: clamp(30px, 10%, 80px);
+
+    animation: fadein 3s;
 }
 
-.header-contents h2{
- font-weight: 500;
- color:khaki;
- font-size: max(4.5vw,22px);
-}
 
-.header-contents p{
-    color:khaki;
-    font-size: 1vw;
-}
+/* =========================
+   HEADING
+========================= */
 
-.header-contents button{
-    border: none;
-    color:khaki;
+.header-contents h2 {
+    max-width: 600px;
+
+    margin: 0;
+
     font-weight: 500;
-    padding:1vw 2.3vw;
-    background-color: darkred;
-    font-size: max(1vw,13px);
-    border-radius: 50px;
+    color: khaki;
+
+    font-size: clamp(28px, 4.5vw, 65px);
+
+    line-height: 1.1;
 }
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.header-contents p {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: khaki;
+
+    font-size: clamp(14px, 1.2vw, 18px);
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.header-contents button {
+    border: none;
+
+    color: khaki;
+    background-color: darkred;
+
+    font-weight: 500;
+
+    padding: clamp(10px, 1vw, 16px)
+             clamp(22px, 2.3vw, 40px);
+
+    font-size: clamp(13px, 1vw, 17px);
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Button Hover */
+
+.header-contents button:hover {
+    background-color: #8b0000;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1050px) {
-   
-     .header-contents{
-         max-width: 45%;
-     }
+
+    .header {
+        height: 400px;
     }
 
-    @media (max-width: 750px) {
-  
-     .header-contents{
-         max-width: 65%;
-     }
-        .header-contents p{
-          display: none;
-        }
-        .header-contents button{
-            padding: 2vw 4vw;
-        }
+    .header-contents {
+        max-width: 55%;
+        left: 5vw;
     }
+
+    .header-contents h2 {
+        font-size: clamp(28px, 5vw, 50px);
+    }
+
+    .header-contents p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .header {
+        height: 400px;
+
+        margin: 20px auto;
+
+        background-position: center;
+        border-radius: 8px;
+    }
+
+
+    .header-contents {
+        max-width: 75%;
+
+        left: 20px;
+        bottom: 30px;
+
+        gap: 15px;
+    }
+
+
+    .header-contents h2 {
+        font-size: clamp(26px, 8vw, 40px);
+
+        line-height: 1.15;
+    }
+
+
+    /* Hide description on mobile */
+
+    .header-contents p {
+        display: none;
+    }
+
+
+    /* Button */
+
+    .header-contents button {
+        padding: 12px 25px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .header {
+        height: 320px;
+    }
+
+    .header-contents {
+        left: 15px;
+        bottom: 20px;
+        max-width: 85%;
+    }
+
+    .header-contents h2 {
+        font-size: 26px;
+    }
+
+    .header-contents button {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+}

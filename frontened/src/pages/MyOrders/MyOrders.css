@@ -1,44 +1,234 @@
-.my-orders{
-    margin: 50px 0px;
+.my-orders {
+    width: 100%;
+    margin: clamp(40px, 5vw, 70px) 0;
+    box-sizing: border-box;
 }
-.my-orders .container{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    margin-top:30px;
+
+
+/* ========================================
+   ORDERS CONTAINER
+======================================== */
+
+.my-orders .container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-top: 30px;
 }
-.my-orders-order{
-    display:grid;
-    grid-template-columns:0.5fr 2fr 1fr 1fr 2fr 1fr;
-    align-items:center;
-     gap:30px;
-     font-size:14px;
-     padding:10px 20px;
-     color:#454545;
-     border:1px solid tomato;
+
+
+/* ========================================
+   ORDER CARD
+======================================== */
+
+.my-orders-order {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.5fr
+        2fr
+        1fr
+        1fr
+        2fr
+        1fr;
+
+    align-items: center;
+
+    gap: clamp(15px, 2vw, 30px);
+
+    font-size: clamp(13px, 1vw, 14px);
+
+    padding: 15px 20px;
+
+    color: #454545;
+
+    border: 1px solid tomato;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
-.my-orders-order p span{
-    color:tomato;
+
+
+/* Hover */
+
+.my-orders-order:hover {
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.15);
+
+    transform: translateY(-2px);
 }
-.my-orders-order p b{
-  font-weight:500;
-  color:#454545;
+
+
+/* ========================================
+   ORDER TEXT
+======================================== */
+
+.my-orders-order p {
+    margin: 0;
+
+    line-height: 1.5;
 }
-.my-orders-order button{
-    border:none;
-    padding:12px 0px;
-    border-radius:4px;
-    background-color:#ffe1e1;
-    curser:pointer;
-    color:#454545;
+
+
+.my-orders-order p span {
+    color: tomato;
 }
-@media (max-width:900px){
-  .my-orders-order{
-    grid-template-columns:1fr 2fr 1fr;
-    row-gap:5px;
-    font-size:12px;
-  }
-  .my-orders-order button{
-    
-  }
+
+
+.my-orders-order p b {
+    font-weight: 500;
+
+    color: #454545;
+}
+
+
+/* ========================================
+   ORDER BUTTON
+======================================== */
+
+.my-orders-order button {
+    width: 100%;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 4px;
+
+    background-color: #ffe1e1;
+
+    cursor: pointer;
+
+    color: #454545;
+
+    font-size: 13px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.my-orders-order button:hover {
+    background-color: #ffd0d0;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .my-orders {
+        margin: 40px 0;
+    }
+
+    .my-orders-order {
+        grid-template-columns:
+            1fr
+            2fr
+            1fr;
+
+        row-gap: 10px;
+
+        column-gap: 20px;
+
+        font-size: 12px;
+
+        padding: 15px;
+    }
+
+    .my-orders-order button {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .my-orders {
+        margin: 30px 0;
+    }
+
+
+    .my-orders .container {
+        gap: 15px;
+
+        margin-top: 20px;
+    }
+
+
+    /* Order becomes a card */
+
+    .my-orders-order {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 15px;
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+
+    /* Button full width */
+
+    .my-orders-order button {
+        width: 100%;
+
+        padding: 11px;
+
+        margin-top: 5px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .my-orders {
+        margin: 25px 0;
+    }
+
+
+    .my-orders-order {
+        padding: 12px;
+
+        gap: 10px;
+
+        font-size: 12px;
+    }
+
+
+    .my-orders-order button {
+        padding: 10px;
+
+        font-size: 12px;
+    }
 }

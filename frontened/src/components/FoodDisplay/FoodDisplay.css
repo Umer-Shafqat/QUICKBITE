@@ -1,15 +1,82 @@
-.food-display{
-   margin-top: 30px;
-}
-.food-display h2{
-   font-size: max(2vw,24px);
-   font-weight: 600 ;
+.food-display {
+    width: 100%;
+    margin-top: clamp(25px, 3vw, 40px);
+    box-sizing: border-box;
 }
 
-.food-display-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  margin-top: 30px;
-  gap:30px;
-  row-gap: 50px;
+/* Heading */
+.food-display h2 {
+    font-size: clamp(24px, 2.5vw, 36px);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
 }
+
+/* Food Cards Grid */
+.food-display-list {
+    display: grid;
+
+    /* Automatically adjusts columns */
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(220px, 1fr)
+    );
+
+    margin-top: clamp(20px, 3vw, 30px);
+
+    /* Responsive gap */
+    column-gap: clamp(15px, 2vw, 30px);
+    row-gap: clamp(25px, 4vw, 50px);
+
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .food-display {
+        margin-top: 25px;
+    }
+
+    .food-display h2 {
+        font-size: 26px;
+    }
+
+    .food-display-list {
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(180px, 1fr)
+        );
+
+        column-gap: 15px;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .food-display {
+        margin-top: 20px;
+    }
+
+    .food-display h2 {
+        font-size: 24px;
+    }
+
+    .food-display-list {
+        /* Two cards per row */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 12px;
+        row-gap: 25px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .food-display-list {
+        /* One card per row on very small screens */
+        grid-template-columns: 1fr;
+    }
+}
+```

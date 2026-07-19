@@ -1,49 +1,284 @@
-.place-order{
+.place-order {
+    width: 100%;
+
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
-    gap:50px;
-    margin-top: 100px;
+
+    gap: clamp(30px, 5vw, 80px);
+
+    margin-top: clamp(50px, 8vw, 100px);
+
+    box-sizing: border-box;
 }
 
-.place-order-left{
-    width:100%;
-    max-width: max(30%,500px);
+
+/* ========================================
+   LEFT - DELIVERY FORM
+======================================== */
+
+.place-order-left {
+    width: 100%;
+    max-width: 550px;
+
+    flex: 1;
 }
 
-.place-order-left .title{
-    font-size: 30px;
+
+/* Form Title */
+
+.place-order-left .title {
+    font-size: clamp(24px, 3vw, 30px);
+
     font-weight: 600;
-    margin-bottom: 50px;
+
+    margin: 0 0 35px;
+
+    color: darkred;
 }
 
-.place-order-left input{
+
+/* ========================================
+   INPUT FIELDS
+======================================== */
+
+.place-order-left input {
+    width: 100%;
+
     margin-bottom: 15px;
-    width:100%;
-    padding:10px;
-    border:1px solid darkred;
+
+    padding: 12px 14px;
+
+    border: 1px solid darkred;
+
     border-radius: 4px;
-    outline-color: darkred;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+
+    color: darkred;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.place-order-left .multi-fields{
-    display: flex;
-    gap:10px;
+
+/* Input Focus */
+
+.place-order-left input:focus {
+    border-color: darkred;
+
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.2);
 }
 
-.place-order-right{
-    width:100%;
-    max-width: max(40%,500px);
-}
 
-.place-order .cart-total button{
-    margin-top: 30px;
-}
-
-.title{
-    color:darkred;
-}
+/* Placeholder */
 
 input::placeholder {
-  color: darkred; 
+    color: darkred;
+
+    opacity: 0.7;
+}
+
+
+/* ========================================
+   MULTI FIELDS
+======================================== */
+
+.place-order-left .multi-fields {
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+.place-order-left .multi-fields input {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   RIGHT - CART TOTAL
+======================================== */
+
+.place-order-right {
+    width: 100%;
+
+    max-width: 550px;
+
+    flex: 1;
+}
+
+
+/* Checkout Button */
+
+.place-order .cart-total button {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: darkred;
+
+    color: khaki;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.place-order .cart-total button:hover {
+    background-color: #8b0000;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   GENERAL TITLE
+======================================== */
+
+.title {
+    color: darkred;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .place-order {
+        gap: 30px;
+
+        margin-top: 60px;
+    }
+
+    .place-order-left .title {
+        margin-bottom: 25px;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 50%;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    .place-order {
+        flex-direction: column;
+
+        gap: 40px;
+
+        margin-top: 40px;
+    }
+
+
+    /* Full width form */
+
+    .place-order-left,
+    .place-order-right {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* Title */
+
+    .place-order-left .title {
+        font-size: 25px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* Inputs */
+
+    .place-order-left input {
+        padding: 11px 12px;
+
+        font-size: 14px;
+    }
+
+
+    /* Multi fields */
+
+    .place-order-left .multi-fields {
+        gap: 8px;
+    }
+
+
+    /* Checkout button */
+
+    .place-order .cart-total button {
+        margin-top: 20px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .place-order {
+        gap: 30px;
+
+        margin-top: 30px;
+    }
+
+
+    .place-order-left .title {
+        font-size: 23px;
+    }
+
+
+    /* Stack multi fields */
+
+    .place-order-left .multi-fields {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+
+    .place-order-left input {
+        padding: 10px;
+
+        font-size: 13px;
+    }
+
+
+    .place-order .cart-total button {
+        width: 100%;
+
+        padding: 12px;
+    }
 }

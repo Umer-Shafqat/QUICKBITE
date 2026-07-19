@@ -1,34 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@310&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@300;400;500;600;700&display=swap');
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Outfit;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
+
+
+/* ========================================
+   HTML & BODY
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
-  min-height: 100vh;
-  background-color: #fcfcfc;
+    min-height: 100vh;
+
+    background-color: #fcfcfc;
+
+    color: #333;
+
+    overflow-x: hidden;
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-hr{
-  border:none;
-  height: 1px;
-  background-color: #a9a9a9;
+
+/* ========================================
+   HORIZONTAL LINE
+======================================== */
+
+hr {
+    width: 100%;
+
+    border: none;
+
+    height: 1px;
+
+    background-color: #a9a9a9;
 }
 
-.app-content{
-  display: flex;
+
+/* ========================================
+   APP CONTENT
+======================================== */
+
+.app-content {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
 }
 
-.flex-col{
-  display:flex;
-  flex-direction: column;
-  gap: 10px;
+
+/* ========================================
+   FLEX COLUMN
+======================================== */
+
+.flex-col {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.app-content > *:last-child {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .app-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .app-content {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .flex-col {
+        gap: 8px;
+    }
+
+    hr {
+        height: 1px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    body {
+        font-size: 13px;
+    }
+
+    .flex-col {
+        gap: 6px;
+    }
+
 }

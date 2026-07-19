@@ -1,149 +1,383 @@
 .add {
-    width: min(700px, 90%);
-    margin: 40px auto;
-    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+
+    margin: clamp(25px, 5vw, 50px) auto;
+
+    padding: clamp(20px, 4vw, 35px);
+
     background: #ffffff;
+
     border-radius: 16px;
+
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
     color: #555;
-    font-size: 16px;
+
+    font-size: clamp(14px, 1.2vw, 16px);
+
+    box-sizing: border-box;
 }
+
+
+/* ========================================
+   HEADING
+======================================== */
 
 .add h2 {
     text-align: center;
-    margin-bottom: 25px;
+
+    margin-bottom: clamp(20px, 3vw, 30px);
+
     color: #333;
-    font-size: 28px;
+
+    font-size: clamp(22px, 3vw, 28px);
+
     font-weight: 700;
 }
 
+
+/* ========================================
+   FORM
+======================================== */
+
 .add form {
+    width: 100%;
+
     display: flex;
+
     flex-direction: column;
-    gap: 20px;
+
+    gap: clamp(15px, 2vw, 20px);
 }
 
-/* Image Upload */
+
+/* ========================================
+   IMAGE UPLOAD
+======================================== */
+
 .add-img-upload {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
     text-align: center;
 }
 
+
 .add-img-upload img {
-    width: 140px;
-    height: 140px;
+    width: clamp(100px, 15vw, 140px);
+
+    height: clamp(100px, 15vw, 140px);
+
     object-fit: cover;
+
     border: 2px dashed #ff6347;
+
     border-radius: 12px;
+
     padding: 10px;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
 }
+
 
 .add-img-upload img:hover {
     transform: scale(1.05);
+
     border-color: #ff4500;
 }
 
-/* Input Fields */
+
+/* ========================================
+   INPUT FIELD CONTAINERS
+======================================== */
+
 .add-product-name,
 .add-product-description {
     width: 100%;
 }
 
+
+/* ========================================
+   INPUT & TEXTAREA
+======================================== */
+
 .add-product-name input,
 .add-product-description textarea {
     width: 100%;
+
     padding: 12px 15px;
+
     border: 1px solid #ddd;
+
     border-radius: 10px;
+
     outline: none;
+
     font-size: 15px;
+
+    color: #333;
+
+    background-color: #fff;
+
     transition: 0.3s;
+
     box-sizing: border-box;
 }
+
 
 .add-product-name input:focus,
 .add-product-description textarea:focus {
     border-color: tomato;
+
     box-shadow: 0 0 8px rgba(255, 99, 71, 0.25);
 }
 
+
 .add-product-description textarea {
     min-height: 120px;
+
     resize: vertical;
 }
 
-/* Category & Price */
+
+/* ========================================
+   CATEGORY & PRICE
+======================================== */
+
 .add-category-price {
+    width: 100%;
+
     display: flex;
+
     gap: 20px;
+
     flex-wrap: wrap;
 }
+
 
 .add-category,
 .add-price {
     flex: 1;
+
     min-width: 180px;
 }
+
 
 .add-category select,
 .add-price input {
     width: 100%;
+
     padding: 12px;
+
     border: 1px solid #ddd;
+
     border-radius: 10px;
+
     outline: none;
+
+    font-size: 15px;
+
+    color: #333;
+
+    background-color: #fff;
+
     transition: 0.3s;
+
     box-sizing: border-box;
 }
+
 
 .add-category select:focus,
 .add-price input:focus {
     border-color: tomato;
+
     box-shadow: 0 0 8px rgba(255, 99, 71, 0.25);
 }
 
-/* Button */
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
 .add-btn {
     width: 180px;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 10px;
-    background: linear-gradient(135deg, #ff6347, #ff4500);
+
+    background: linear-gradient(
+        135deg,
+        #ff6347,
+        #ff4500
+    );
+
     color: white;
+
     font-size: 16px;
+
     font-weight: 600;
+
     cursor: pointer;
+
     align-self: center;
-    transition: 0.3s ease;
+
+    transition:
+        0.3s ease;
 }
+
 
 .add-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(255, 99, 71, 0.35);
+
+    box-shadow:
+        0 8px 18px rgba(255, 99, 71, 0.35);
 }
+
 
 .add-btn:active {
     transform: scale(0.97);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
     .add {
-        width: 95%;
-        padding: 20px;
+        width: 92%;
+
+        padding: 25px;
     }
 
     .add-category-price {
-        flex-direction: column;
+        gap: 15px;
     }
+
+    .add-category,
+    .add-price {
+        min-width: 200px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .add {
+        width: 94%;
+
+        padding: 20px;
+
+        margin: 25px auto;
+
+        border-radius: 12px;
+    }
+
+
+    .add h2 {
+        font-size: 24px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* Stack category and price */
+
+    .add-category-price {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .add-category,
+    .add-price {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* Full width button */
 
     .add-btn {
         width: 100%;
+
+        padding: 13px;
     }
+
+
+    /* Image */
 
     .add-img-upload img {
         width: 120px;
+
         height: 120px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .add {
+        width: 95%;
+
+        padding: 15px;
+    }
+
+
+    .add h2 {
+        font-size: 21px;
+    }
+
+
+    .add form {
+        gap: 14px;
+    }
+
+
+    .add-product-name input,
+    .add-product-description textarea,
+    .add-category select,
+    .add-price input {
+        padding: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .add-img-upload img {
+        width: 100px;
+
+        height: 100px;
+
+        padding: 7px;
+    }
+
+
+    .add-btn {
+        font-size: 14px;
+
+        padding: 11px;
     }
 }

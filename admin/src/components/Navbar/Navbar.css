@@ -1,33 +1,166 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
 .navbar {
+    width: 100%;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 12px 4%;
+
     border-bottom: 2px solid #e5e5e5;
-    background: #fff;
+
+    background-color: #fff;
+
+    box-sizing: border-box;
 }
+
+
+/* ========================================
+   LEFT SECTION
+======================================== */
 
 .navbar-left {
     display: flex;
+
     flex-direction: column;
+
+    min-width: 0;
 }
 
+
+/* ========================================
+   LOGO
+======================================== */
+
 .navbar .logo {
-    width: max(100px, 8%);     /* Adjust if needed */
+    width: clamp(100px, 8vw, 150px);
+
     height: auto;
+
+    display: block;
+
+    object-fit: contain;
 }
+
+
+/* ========================================
+   SUBTITLE / TEXT
+======================================== */
 
 .navbar-left p {
     margin: 0;
+
     margin-top: -5px;
-    font-size: 16px;
+
+    font-size: clamp(12px, 1.2vw, 16px);
+
     font-weight: 600;
+
     color: #444;
 }
 
+
+/* ========================================
+   PROFILE IMAGE
+======================================== */
+
 .navbar .profile_image {
-    width: 55px;
-    height: 55px;
+    width: clamp(40px, 4vw, 55px);
+
+    height: clamp(40px, 4vw, 55px);
+
     border-radius: 50%;
+
+    object-fit: cover;
+
     cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+
+.navbar .profile_image:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .navbar .logo {
+        width: 110px;
+    }
+
+    .navbar-left p {
+        font-size: 13px;
+        margin-top: -3px;
+    }
+
+    .navbar .profile_image {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar .logo {
+        width: 100px;
+    }
+
+    .navbar-left p {
+        font-size: 11px;
+    }
+
+    .navbar .profile_image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 350px) {
+
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar .logo {
+        width: 90px;
+    }
+
+    .navbar-left p {
+        font-size: 10px;
+    }
+
+    .navbar .profile_image {
+        width: 36px;
+        height: 36px;
+    }
 }

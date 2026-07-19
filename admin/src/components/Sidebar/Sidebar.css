@@ -1,36 +1,259 @@
-.sidebar{
-    width:18%;
-    min-height:100vh;
-    border:1.5px solid #a9a9a9;
-    border-top:0;
-    font-size:max(1vw,10px);
+.sidebar {
+    width: 18%;
+
+    min-height: 100vh;
+
+    border: 1.5px solid #a9a9a9;
+
+    border-top: 0;
+
+    background-color: #fff;
+
+    font-size: clamp(10px, 1vw, 14px);
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
 }
 
-.sidebar-options{
-    padding-top:50px;
-    padding-left:20%;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+
+/* ========================================
+   SIDEBAR OPTIONS
+======================================== */
+
+.sidebar-options {
+    padding-top: 50px;
+
+    padding-left: 12%;
+
+    padding-right: 12%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
 
-.sidebar-option{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    border:1px solid #a9a9a9;
-    border-right:0;
-    padding:8px 10px;
-    border-radius:3px 0px 0px 3px;
-    cursor:pointer;
+
+/* ========================================
+   SIDEBAR OPTION
+======================================== */
+
+.sidebar-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid #a9a9a9;
+
+    border-right: 0;
+
+    padding: 8px 10px;
+
+    border-radius: 3px 0 0 3px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.sidebar-option.active{
-    background-color:#fff0ed;
-    border-color:tomato;
+
+/* ========================================
+   ACTIVE OPTION
+======================================== */
+
+.sidebar-option.active {
+    background-color: #fff0ed;
+
+    border-color: tomato;
 }
-@media (max-width:900px){
-   .sidebar-option p{
-    display:none;
-   }
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.sidebar-option img {
+    width: 22px;
+
+    height: 22px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 80px;
+
+        font-size: 10px;
+    }
+
+
+    .sidebar-options {
+        padding: 30px 10px;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+
+    .sidebar-option {
+        width: 55px;
+
+        height: 50px;
+
+        justify-content: center;
+
+        padding: 8px;
+
+        border-right: 1px solid #a9a9a9;
+
+        border-radius: 5px;
+    }
+
+
+    .sidebar-option p {
+        display: none;
+    }
+
+
+    .sidebar-option img {
+        width: 24px;
+
+        height: 24px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 100%;
+
+        min-height: auto;
+
+        position: fixed;
+
+        bottom: 0;
+
+        left: 0;
+
+        z-index: 1000;
+
+        border: none;
+
+        border-top: 1px solid #a9a9a9;
+
+        background-color: #fff;
+
+        box-shadow:
+            0 -3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+
+    .sidebar-options {
+        width: 100%;
+
+        padding: 8px 10px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: space-around;
+
+        align-items: center;
+
+        gap: 5px;
+    }
+
+
+    .sidebar-option {
+        width: auto;
+
+        min-width: 55px;
+
+        height: 50px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        border: none;
+
+        border-radius: 8px;
+
+        padding: 8px;
+    }
+
+
+    .sidebar-option.active {
+        background-color: #fff0ed;
+
+        border: 1px solid tomato;
+    }
+
+
+    .sidebar-option img {
+        width: 24px;
+
+        height: 24px;
+    }
+
+
+    .sidebar-option p {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .sidebar-options {
+        padding: 6px 5px;
+
+        gap: 2px;
+    }
+
+
+    .sidebar-option {
+        min-width: 45px;
+
+        height: 45px;
+
+        padding: 6px;
+    }
+
+
+    .sidebar-option img {
+        width: 21px;
+
+        height: 21px;
+    }
 }

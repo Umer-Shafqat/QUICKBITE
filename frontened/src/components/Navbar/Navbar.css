@@ -1,508 +1,5 @@
-.app {
-    width: 90%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-
 /* ========================================
-   NAVBAR
-======================================== */
-
-.navbar {
-    width: 100%;
-
-    padding: 20px 0;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: relative;
-    z-index: 100;
-}
-
-
-/* ========================================
-   LOGO
-======================================== */
-
-.navbar .logo {
-    width: clamp(110px, 12vw, 150px);
-    height: auto;
-}
-
-
-/* ========================================
-   NAVIGATION MENU
-======================================== */
-
-.navbar-menu {
-    display: flex;
-    align-items: center;
-
-    list-style: none;
-
-    gap: clamp(15px, 2vw, 30px);
-
-    margin: 0;
-    padding: 0;
-
-    color: darkred;
-
-    font-size: clamp(14px, 1.2vw, 18px);
-
-    cursor: pointer;
-}
-
-
-/* Active Navigation */
-
-.navbar .active {
-    padding-bottom: 4px;
-    border-bottom: 2px solid darkred;
-}
-
-
-/* React Router Link */
-
-.navbar a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* ========================================
-   RIGHT SIDE
-======================================== */
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-
-    gap: clamp(15px, 2.5vw, 40px);
-}
-
-
-/* Right Side Icons */
-
-.navbar-right > img,
-.navbar-search-icon img {
-    width: clamp(20px, 2vw, 25px);
-    height: auto;
-
-    cursor: pointer;
-}
-
-
-/* ========================================
-   LOGIN BUTTON
-======================================== */
-
-.navbar button {
-    background: transparent;
-
-    font-size: clamp(13px, 1.1vw, 16px);
-
-    color: darkred;
-
-    border: 1px solid darkred;
-
-    padding: 10px clamp(18px, 2vw, 30px);
-
-    border-radius: 50px;
-
-    cursor: pointer;
-
-    white-space: nowrap;
-
-    transition: 0.3s ease;
-}
-
-
-.navbar button:hover {
-    background-color: darkred;
-    color: khaki;
-    border-color: khaki;
-}
-
-
-/* ========================================
-   CART / SEARCH ICON DOT
-======================================== */
-
-.navbar-search-icon {
-    position: relative;
-    cursor: pointer;
-}
-
-
-.navbar-search-icon .dot {
-    position: absolute;
-
-    width: 9px;
-    height: 9px;
-
-    background-color: darkred;
-
-    border-radius: 50%;
-
-    top: -5px;
-    right: -5px;
-}
-
-
-/* ========================================
-   PROFILE
-======================================== */
-
-.navbar-profile {
-    position: relative;
-    cursor: pointer;
-}
-
-
-.navbar-profile > img {
-    width: clamp(25px, 2.5vw, 35px);
-    height: auto;
-}
-
-
-/* ========================================
-   PROFILE DROPDOWN
-======================================== */
-
-.nav-profile-dropdown {
-    position: absolute;
-
-    top: calc(100% + 12px);
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-    width: 160px;
-
-    background: #fff;
-
-    border: 1px solid tomato;
-
-    border-radius: 8px;
-
-    padding: 12px;
-
-    margin: 0;
-
-    list-style: none;
-
-    z-index: 1000;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-
-.nav-profile-dropdown li {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    cursor: pointer;
-
-    color: #555;
-
-    font-size: 14px;
-}
-
-
-.nav-profile-dropdown li img {
-    width: 18px;
-    height: 18px;
-}
-
-
-.nav-profile-dropdown li:hover {
-    color: tomato;
-}
-
-
-.nav-profile-dropdown hr {
-    width: 100%;
-
-    border: none;
-    border-top: 1px solid #ddd;
-
-    margin: 2px 0;
-}
-
-
-/* ========================================
-   SEARCH BOX
-======================================== */
-
-.search-box {
-    position: relative;
-
-    width: 100%;
-    max-width: 320px;
-}
-
-
-/* Search Input Container */
-
-.search-input {
-    position: relative;
-
-    width: 100%;
-}
-
-
-/* Input */
-
-.search-input input {
-    width: 100%;
-    height: 46px;
-
-    border: none;
-    outline: none;
-
-    border-radius: 30px;
-
-    background: #fff;
-
-    padding: 0 18px 0 50px;
-
-    font-size: 15px;
-
-    box-sizing: border-box;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s ease;
-}
-
-
-.search-input input:focus {
-    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.25);
-}
-
-
-/* ========================================
-   SEARCH ICON
-======================================== */
-
-.search-icon {
-    position: absolute;
-
-    left: 18px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 22px;
-    height: 22px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.search-icon:hover {
-    transform: translateY(-50%) scale(1.1);
-    opacity: 0.8;
-}
-
-
-/* ========================================
-   SEARCH RESULTS
-======================================== */
-
-.search-result {
-    position: absolute;
-
-    top: 58px;
-    left: 0;
-
-    width: 100%;
-    max-height: 380px;
-
-    overflow-y: auto;
-
-    background: #fff;
-
-    border-radius: 18px;
-
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-
-    z-index: 999;
-
-    padding: 8px;
-
-    box-sizing: border-box;
-}
-
-
-/* Scrollbar */
-
-.search-result::-webkit-scrollbar {
-    width: 6px;
-}
-
-
-.search-result::-webkit-scrollbar-thumb {
-    background: darkred;
-    border-radius: 10px;
-}
-
-
-/* ========================================
-   SEARCH ITEM
-======================================== */
-
-.search-item {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 10px;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.search-item:hover {
-    background: #fff3f1;
-}
-
-
-/* Food Image */
-
-.search-food-img {
-    width: 65px;
-    height: 65px;
-
-    object-fit: cover;
-
-    border-radius: 12px;
-
-    flex-shrink: 0;
-}
-
-
-/* Search Information */
-
-.search-info {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-}
-
-
-.search-info h4 {
-    margin: 0;
-
-    font-size: clamp(15px, 1.5vw, 18px);
-
-    font-weight: 600;
-
-    color: #262626;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-.search-info span {
-    font-size: 14px;
-
-    color: #777;
-
-    margin: 3px 0;
-}
-
-
-.search-info p {
-    color: darkred;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    margin: 0;
-}
-
-
-/* ========================================
-   LAPTOP / TABLET
-======================================== */
-
-@media (max-width: 1050px) {
-
-    .app {
-        width: 92%;
-    }
-
-    .navbar {
-        padding: 18px 0;
-    }
-
-    .navbar-menu {
-        gap: 15px;
-        font-size: 15px;
-    }
-
-    .navbar-right {
-        gap: 20px;
-    }
-
-    .search-box {
-        max-width: 250px;
-    }
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 900px) {
-
-    .navbar .logo {
-        width: 120px;
-    }
-
-    .navbar-menu {
-        gap: 12px;
-        font-size: 14px;
-    }
-
-    .navbar-right {
-        gap: 15px;
-    }
-
-    .navbar button {
-        padding: 8px 18px;
-        font-size: 14px;
-    }
-
-    .search-box {
-        max-width: 220px;
-    }
-}
-
-
-/* ========================================
-   MOBILE
+   MOBILE NAVBAR
 ======================================== */
 
 @media (max-width: 750px) {
@@ -512,49 +9,89 @@
     }
 
     .navbar {
+        width: 100%;
         padding: 15px 0;
-    }
 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    /* Hide desktop navigation */
-
-    .navbar-menu {
-        display: none;
-    }
-
-
-    /* Right side spacing */
-
-    .navbar-right {
-        gap: 12px;
+        gap: 10px;
     }
 
 
     /* Logo */
 
     .navbar .logo {
-        width: 110px;
+        width: 105px;
+        flex-shrink: 0;
+    }
+
+
+    /* Show navigation menu */
+
+    .navbar-menu {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        font-size: 12px;
+
+        flex-shrink: 1;
+    }
+
+
+    /* Right side */
+
+    .navbar-right {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        flex-shrink: 0;
     }
 
 
     /* Login button */
 
     .navbar button {
-        padding: 7px 15px;
-        font-size: 13px;
+        padding: 7px 12px;
+
+        font-size: 12px;
     }
 
 
-    /* Search */
+    /* Icons */
+
+    .navbar-right > img,
+    .navbar-search-icon img {
+        width: 20px;
+    }
+
+
+    /* Profile */
+
+    .navbar-profile > img {
+        width: 28px;
+    }
+
+
+    /* Search box */
 
     .search-box {
         position: absolute;
 
         top: calc(100% + 10px);
+
         left: 0;
 
         width: 100%;
-        max-width: none;
+
+        max-width: 100%;
 
         z-index: 500;
     }
@@ -570,57 +107,64 @@
    SMALL MOBILE
 ======================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
     .app {
         width: 94%;
     }
 
+
     .navbar {
         padding: 12px 0;
+
+        gap: 6px;
     }
+
+
+    /* Logo */
 
     .navbar .logo {
-        width: 100px;
+        width: 90px;
     }
 
-    .navbar-right {
-        gap: 8px;
+
+    /* Navigation */
+
+    .navbar-menu {
+        gap: 6px;
+
+        font-size: 11px;
     }
+
+
+    /* Right side */
+
+    .navbar-right {
+        gap: 6px;
+    }
+
+
+    /* Icons */
 
     .navbar-right > img,
     .navbar-search-icon img {
-        width: 20px;
+        width: 18px;
     }
+
+
+    /* Login */
 
     .navbar button {
-        padding: 7px 12px;
-        font-size: 12px;
+        padding: 6px 9px;
+
+        font-size: 11px;
     }
 
 
-    /* Search item */
+    /* Profile */
 
-    .search-item {
-        gap: 10px;
-        padding: 8px;
-    }
-
-    .search-food-img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .search-info h4 {
-        font-size: 14px;
-    }
-
-    .search-info span {
-        font-size: 12px;
-    }
-
-    .search-info p {
-        font-size: 13px;
+    .navbar-profile > img {
+        width: 25px;
     }
 }
 
@@ -629,17 +173,49 @@
    VERY SMALL MOBILE
 ======================================== */
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
+
+    .app {
+        width: 95%;
+    }
+
+
+    .navbar {
+        gap: 4px;
+    }
+
 
     .navbar .logo {
-        width: 90px;
+        width: 75px;
     }
 
-    .navbar button {
-        padding: 6px 10px;
+
+    .navbar-menu {
+        gap: 4px;
+
+        font-size: 10px;
     }
+
 
     .navbar-right {
-        gap: 6px;
+        gap: 4px;
+    }
+
+
+    .navbar-right > img,
+    .navbar-search-icon img {
+        width: 17px;
+    }
+
+
+    .navbar button {
+        padding: 5px 7px;
+
+        font-size: 10px;
+    }
+
+
+    .navbar-profile > img {
+        width: 22px;
     }
 }

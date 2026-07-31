@@ -4,6 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
+        const handlePayment = () => {
+  alert("JazzCash Payment Gateway will be available soon.");
+};
+
 const PlaceOrder = () => {
   const {
     getTotalCartAmount,
@@ -215,7 +220,9 @@ const PlaceOrder = () => {
             </div>
           </div>
 
-          <button type="submit">Proceed to Amount</button>
+<button type="button" onClick={handlePayment}>
+  Proceed to Amount
+</button>
         </div>
       </div>
     </form>

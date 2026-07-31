@@ -8,6 +8,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 const [cartitems, setCartitems] = useState({});
 const [searchText, setSearchText] = useState("");
+const [loading, setLoading] = useState(true);
 
 const url = "https://quickbite-backened.onrender.com";
 
@@ -43,10 +44,21 @@ const getTotalCartAmount = () => {
     return totalAmount;
 }
 
- const fetchFoodList = async () =>{
-    const response = await axios.get(url+"/api/food/list")
-    setFoodList(response.data.data)
- }
+const fetchFoodList = async () => {
+  try {
+    setLoading(true);
+
+    const response = await axios.get(`${url}/api/food/list`);
+
+    if (response.data.success) {
+      setFoodList(response.data.data);
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
+};
 
 const loadCartData = async (token) => {
   const response = await axios.post(
@@ -78,6 +90,7 @@ useEffect(() => {
     const contextValue = {
       food_list,
       cartitems,
+      loading,
       addToCart,
       removeFromCart,
       getTotalCartAmount,
